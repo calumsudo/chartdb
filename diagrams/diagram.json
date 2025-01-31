@@ -1,0 +1,1685 @@
+{
+  "id": "0",
+  "name": "ShadowcrafterDB-db",
+  "createdAt": "2025-01-29T17:31:06.881Z",
+  "updatedAt": "2025-01-29T17:31:06.881Z",
+  "databaseType": "postgresql",
+  "tables": [
+    {
+      "id": "1",
+      "name": "engagement_todos",
+      "schema": "public",
+      "x": -288.9087296526011,
+      "y": 559.619407771256,
+      "fields": [
+        {
+          "id": "2",
+          "name": "id",
+          "type": {
+            "id": "integer",
+            "name": "integer"
+          },
+          "primaryKey": true,
+          "unique": true,
+          "nullable": false,
+          "default": "nextval('engagement_todos_id_seq'::regclass)",
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "3",
+          "name": "title",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "4",
+          "name": "description",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "5",
+          "name": "child_task",
+          "type": {
+            "id": "jsonb",
+            "name": "jsonb"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "6",
+          "name": "marked_as_done",
+          "type": {
+            "id": "boolean",
+            "name": "boolean"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "default": "false",
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "7",
+          "name": "engagement_id",
+          "type": {
+            "id": "integer",
+            "name": "integer"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        }
+      ],
+      "indexes": [
+        {
+          "id": "8",
+          "name": "engagement_todos_pkey",
+          "unique": true,
+          "fieldIds": [
+            "2"
+          ],
+          "createdAt": 1738171857872
+        }
+      ],
+      "color": "#ff6b8a",
+      "isView": false,
+      "isMaterializedView": false,
+      "createdAt": 1738171857872,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "9",
+      "name": "valid_timezones",
+      "schema": "public",
+      "x": 100.00000000000003,
+      "y": 600,
+      "fields": [
+        {
+          "id": "10",
+          "name": "name",
+          "type": {
+            "id": "character_varying",
+            "name": "character varying"
+          },
+          "primaryKey": true,
+          "unique": true,
+          "nullable": false,
+          "character_maximum_length": "50",
+          "createdAt": 1738171857873
+        }
+      ],
+      "indexes": [
+        {
+          "id": "11",
+          "name": "valid_timezones_pkey",
+          "unique": true,
+          "fieldIds": [
+            "10"
+          ],
+          "createdAt": 1738171857873
+        }
+      ],
+      "color": "#9ef07a",
+      "isView": false,
+      "isMaterializedView": false,
+      "createdAt": 1738171857873,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "12",
+      "name": "engagement_documents",
+      "schema": "public",
+      "x": 888.9087296526011,
+      "y": 559.6194077712559,
+      "fields": [
+        {
+          "id": "13",
+          "name": "client_id",
+          "type": {
+            "id": "integer",
+            "name": "integer"
+          },
+          "primaryKey": true,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857871
+        },
+        {
+          "id": "14",
+          "name": "engagement_id",
+          "type": {
+            "id": "integer",
+            "name": "integer"
+          },
+          "primaryKey": true,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "15",
+          "name": "document",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": true,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "16",
+          "name": "details",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "17",
+          "name": "uploaded_by",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        }
+      ],
+      "indexes": [
+        {
+          "id": "18",
+          "name": "engagement_documents_pkey",
+          "unique": true,
+          "fieldIds": [
+            "13",
+            "14",
+            "15"
+          ],
+          "createdAt": 1738171857872
+        }
+      ],
+      "color": "#b067e9",
+      "isView": false,
+      "isMaterializedView": false,
+      "createdAt": 1738171857872,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "19",
+      "name": "chat_messages",
+      "schema": "public",
+      "x": 2088.9087296526013,
+      "y": 559.6194077712559,
+      "fields": [
+        {
+          "id": "20",
+          "name": "id",
+          "type": {
+            "id": "integer",
+            "name": "integer"
+          },
+          "primaryKey": true,
+          "unique": true,
+          "nullable": false,
+          "default": "nextval('chat_messages_id_seq'::regclass)",
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "21",
+          "name": "chat_id",
+          "type": {
+            "id": "uuid",
+            "name": "uuid"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "22",
+          "name": "user_id",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "23",
+          "name": "chat_complete",
+          "type": {
+            "id": "integer",
+            "name": "integer"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "24",
+          "name": "message_obj",
+          "type": {
+            "id": "jsonb",
+            "name": "jsonb"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "25",
+          "name": "created_at",
+          "type": {
+            "id": "timestamp_with_time_zone",
+            "name": "timestamp with time zone"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "default": "now()",
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "26",
+          "name": "critical_action",
+          "type": {
+            "id": "boolean",
+            "name": "boolean"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "default": "false",
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "27",
+          "name": "critical_action_message",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "28",
+          "name": "message_status",
+          "type": {
+            "id": "user-defined",
+            "name": "user-defined"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "29",
+          "name": "response_time_ms",
+          "type": {
+            "id": "double_precision",
+            "name": "double precision"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        }
+      ],
+      "indexes": [
+        {
+          "id": "30",
+          "name": "chat_messages_pkey",
+          "unique": true,
+          "fieldIds": [
+            "20"
+          ],
+          "createdAt": 1738171857872
+        }
+      ],
+      "color": "#b067e9",
+      "isView": false,
+      "isMaterializedView": false,
+      "createdAt": 1738171857872,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "31",
+      "name": "saved_scans",
+      "schema": "public",
+      "x": -300,
+      "y": 100.00000000000006,
+      "fields": [
+        {
+          "id": "32",
+          "name": "id",
+          "type": {
+            "id": "integer",
+            "name": "integer"
+          },
+          "primaryKey": true,
+          "unique": true,
+          "nullable": false,
+          "default": "nextval('saved_scans_id_seq'::regclass)",
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "33",
+          "name": "engagement_id",
+          "type": {
+            "id": "integer",
+            "name": "integer"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "34",
+          "name": "file_name",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "35",
+          "name": "host_ip",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "36",
+          "name": "scan_type",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "37",
+          "name": "scan_content",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "38",
+          "name": "severity_level",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": true,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "39",
+          "name": "created_at",
+          "type": {
+            "id": "timestamp_with_time_zone",
+            "name": "timestamp with time zone"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "default": "now()",
+          "createdAt": 1738171857872
+        }
+      ],
+      "indexes": [
+        {
+          "id": "40",
+          "name": "saved_scans_pkey",
+          "unique": true,
+          "fieldIds": [
+            "32"
+          ],
+          "createdAt": 1738171857872
+        }
+      ],
+      "color": "#42e0c0",
+      "isView": false,
+      "isMaterializedView": false,
+      "createdAt": 1738171857872,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "41",
+      "name": "inference_response_metadata",
+      "schema": "public",
+      "x": 2488.9087296526013,
+      "y": 559.6194077712559,
+      "fields": [
+        {
+          "id": "42",
+          "name": "id",
+          "type": {
+            "id": "integer",
+            "name": "integer"
+          },
+          "primaryKey": true,
+          "unique": true,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "43",
+          "name": "chat_complete",
+          "type": {
+            "id": "jsonb",
+            "name": "jsonb"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "44",
+          "name": "meta_data",
+          "type": {
+            "id": "jsonb",
+            "name": "jsonb"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        }
+      ],
+      "indexes": [
+        {
+          "id": "45",
+          "name": "inference_response_metadata_pkey",
+          "unique": true,
+          "fieldIds": [
+            "42"
+          ],
+          "createdAt": 1738171857872
+        }
+      ],
+      "color": "#c05dcf",
+      "isView": false,
+      "isMaterializedView": false,
+      "createdAt": 1738171857872,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "46",
+      "name": "templates",
+      "schema": "public",
+      "x": 1700,
+      "y": 1050,
+      "fields": [
+        {
+          "id": "47",
+          "name": "id",
+          "type": {
+            "id": "integer",
+            "name": "integer"
+          },
+          "primaryKey": true,
+          "unique": true,
+          "nullable": false,
+          "default": "nextval('templates_id_seq'::regclass)",
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "48",
+          "name": "obj",
+          "type": {
+            "id": "jsonb",
+            "name": "jsonb"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "49",
+          "name": "parent_id",
+          "type": {
+            "id": "integer",
+            "name": "integer"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": true,
+          "createdAt": 1738171857872
+        }
+      ],
+      "indexes": [
+        {
+          "id": "50",
+          "name": "templates_pkey",
+          "unique": true,
+          "fieldIds": [
+            "47"
+          ],
+          "createdAt": 1738171857872
+        }
+      ],
+      "color": "#8eb7ff",
+      "isView": false,
+      "isMaterializedView": false,
+      "createdAt": 1738171857872,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "51",
+      "name": "engagements",
+      "schema": "public",
+      "x": 100,
+      "y": 100,
+      "fields": [
+        {
+          "id": "52",
+          "name": "id",
+          "type": {
+            "id": "integer",
+            "name": "integer"
+          },
+          "primaryKey": true,
+          "unique": true,
+          "nullable": false,
+          "default": "nextval('engagements_id_seq'::regclass)",
+          "createdAt": 1738171857873
+        },
+        {
+          "id": "53",
+          "name": "codename",
+          "type": {
+            "id": "character_varying",
+            "name": "character varying"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857873
+        },
+        {
+          "id": "54",
+          "name": "start_date",
+          "type": {
+            "id": "date",
+            "name": "date"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857873
+        },
+        {
+          "id": "55",
+          "name": "end_date",
+          "type": {
+            "id": "date",
+            "name": "date"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857873
+        },
+        {
+          "id": "56",
+          "name": "start_time",
+          "type": {
+            "id": "time_without_time_zone",
+            "name": "time without time zone"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": true,
+          "createdAt": 1738171857873
+        },
+        {
+          "id": "57",
+          "name": "end_time",
+          "type": {
+            "id": "time_without_time_zone",
+            "name": "time without time zone"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": true,
+          "createdAt": 1738171857873
+        },
+        {
+          "id": "58",
+          "name": "note",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": true,
+          "createdAt": 1738171857873
+        },
+        {
+          "id": "59",
+          "name": "slack_channel",
+          "type": {
+            "id": "character_varying",
+            "name": "character varying"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": true,
+          "createdAt": 1738171857873
+        },
+        {
+          "id": "60",
+          "name": "complete",
+          "type": {
+            "id": "boolean",
+            "name": "boolean"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "default": "false",
+          "createdAt": 1738171857873
+        },
+        {
+          "id": "61",
+          "name": "client_id",
+          "type": {
+            "id": "integer",
+            "name": "integer"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857873
+        },
+        {
+          "id": "62",
+          "name": "type_id",
+          "type": {
+            "id": "integer",
+            "name": "integer"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857873
+        },
+        {
+          "id": "63",
+          "name": "tag",
+          "type": {
+            "id": "array",
+            "name": "array"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": true,
+          "createdAt": 1738171857873
+        },
+        {
+          "id": "64",
+          "name": "status",
+          "type": {
+            "id": "user-defined",
+            "name": "user-defined"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857873
+        },
+        {
+          "id": "65",
+          "name": "priority",
+          "type": {
+            "id": "user-defined",
+            "name": "user-defined"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857873
+        },
+        {
+          "id": "66",
+          "name": "timezone",
+          "type": {
+            "id": "character_varying",
+            "name": "character varying"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": true,
+          "character_maximum_length": "50",
+          "default": "'America/New_York'::character varying",
+          "createdAt": 1738171857873
+        }
+      ],
+      "indexes": [
+        {
+          "id": "67",
+          "name": "engagements_pkey",
+          "unique": true,
+          "fieldIds": [
+            "52"
+          ],
+          "createdAt": 1738171857873
+        }
+      ],
+      "color": "#ffe374",
+      "isView": false,
+      "isMaterializedView": false,
+      "createdAt": 1738171857873,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "68",
+      "name": "chats",
+      "schema": "public",
+      "x": 1688.908729652601,
+      "y": 559.6194077712559,
+      "fields": [
+        {
+          "id": "69",
+          "name": "id",
+          "type": {
+            "id": "uuid",
+            "name": "uuid"
+          },
+          "primaryKey": true,
+          "unique": true,
+          "nullable": false,
+          "default": "gen_random_uuid()",
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "70",
+          "name": "engagement_id",
+          "type": {
+            "id": "integer",
+            "name": "integer"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "71",
+          "name": "client_id",
+          "type": {
+            "id": "integer",
+            "name": "integer"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "72",
+          "name": "title",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "73",
+          "name": "created_at",
+          "type": {
+            "id": "timestamp_with_time_zone",
+            "name": "timestamp with time zone"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "default": "now()",
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "74",
+          "name": "created_by",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "75",
+          "name": "inference_profile_name",
+          "type": {
+            "id": "user-defined",
+            "name": "user-defined"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "76",
+          "name": "is_private_chat",
+          "type": {
+            "id": "boolean",
+            "name": "boolean"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "default": "false",
+          "createdAt": 1738171857872
+        }
+      ],
+      "indexes": [
+        {
+          "id": "77",
+          "name": "chats_pkey",
+          "unique": true,
+          "fieldIds": [
+            "69"
+          ],
+          "createdAt": 1738171857872
+        }
+      ],
+      "color": "#9ef07a",
+      "isView": false,
+      "isMaterializedView": false,
+      "createdAt": 1738171857872,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "78",
+      "name": "engagement_types",
+      "schema": "public",
+      "x": 500,
+      "y": 100,
+      "fields": [
+        {
+          "id": "79",
+          "name": "id",
+          "type": {
+            "id": "integer",
+            "name": "integer"
+          },
+          "primaryKey": true,
+          "unique": true,
+          "nullable": false,
+          "default": "nextval('engagement_types_id_seq'::regclass)",
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "80",
+          "name": "type",
+          "type": {
+            "id": "character_varying",
+            "name": "character varying"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        }
+      ],
+      "indexes": [
+        {
+          "id": "81",
+          "name": "engagement_types_pkey",
+          "unique": true,
+          "fieldIds": [
+            "79"
+          ],
+          "createdAt": 1738171857872
+        }
+      ],
+      "color": "#42e0c0",
+      "isView": false,
+      "isMaterializedView": false,
+      "createdAt": 1738171857872,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "82",
+      "name": "pinned_engagements",
+      "schema": "public",
+      "x": 1288.908729652601,
+      "y": 1059.6194077712557,
+      "fields": [
+        {
+          "id": "83",
+          "name": "id",
+          "type": {
+            "id": "integer",
+            "name": "integer"
+          },
+          "primaryKey": true,
+          "unique": true,
+          "nullable": false,
+          "default": "nextval('pinned_engagements_id_seq'::regclass)",
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "84",
+          "name": "user_id",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "85",
+          "name": "engagement_ids",
+          "type": {
+            "id": "array",
+            "name": "array"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        }
+      ],
+      "indexes": [
+        {
+          "id": "86",
+          "name": "pinned_engagements_pkey",
+          "unique": true,
+          "fieldIds": [
+            "83"
+          ],
+          "createdAt": 1738171857872
+        }
+      ],
+      "color": "#b067e9",
+      "isView": false,
+      "isMaterializedView": false,
+      "createdAt": 1738171857872,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "87",
+      "name": "evidence",
+      "schema": "public",
+      "x": -288.9087296526012,
+      "y": -359.61940777125585,
+      "fields": [
+        {
+          "id": "88",
+          "name": "id",
+          "type": {
+            "id": "integer",
+            "name": "integer"
+          },
+          "primaryKey": true,
+          "unique": true,
+          "nullable": false,
+          "default": "nextval('evidence_id_seq'::regclass)",
+          "createdAt": 1738171857873
+        },
+        {
+          "id": "89",
+          "name": "obj",
+          "type": {
+            "id": "jsonb",
+            "name": "jsonb"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857873
+        },
+        {
+          "id": "90",
+          "name": "engagement_id",
+          "type": {
+            "id": "integer",
+            "name": "integer"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857873
+        },
+        {
+          "id": "91",
+          "name": "s3_object_name",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857873
+        }
+      ],
+      "indexes": [
+        {
+          "id": "92",
+          "name": "evidence_pkey",
+          "unique": true,
+          "fieldIds": [
+            "88"
+          ],
+          "createdAt": 1738171857873
+        }
+      ],
+      "color": "#4dee8a",
+      "isView": false,
+      "isMaterializedView": false,
+      "createdAt": 1738171857873,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "93",
+      "name": "users",
+      "schema": "public",
+      "x": 1288.908729652601,
+      "y": 559.6194077712559,
+      "fields": [
+        {
+          "id": "94",
+          "name": "id",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": true,
+          "unique": true,
+          "nullable": false,
+          "createdAt": 1738171857871
+        },
+        {
+          "id": "95",
+          "name": "created_at",
+          "type": {
+            "id": "timestamp_with_time_zone",
+            "name": "timestamp with time zone"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "default": "now()",
+          "createdAt": 1738171857871
+        },
+        {
+          "id": "96",
+          "name": "username",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857871
+        },
+        {
+          "id": "97",
+          "name": "email",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": true,
+          "createdAt": 1738171857871
+        },
+        {
+          "id": "98",
+          "name": "first_name",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": true,
+          "createdAt": 1738171857871
+        },
+        {
+          "id": "99",
+          "name": "last_name",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": true,
+          "createdAt": 1738171857871
+        },
+        {
+          "id": "100",
+          "name": "role",
+          "type": {
+            "id": "user-defined",
+            "name": "user-defined"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "default": "'operator'::userrole",
+          "createdAt": 1738171857871
+        },
+        {
+          "id": "101",
+          "name": "avatar",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": true,
+          "createdAt": 1738171857871
+        },
+        {
+          "id": "102",
+          "name": "theme",
+          "type": {
+            "id": "jsonb",
+            "name": "jsonb"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "default": "'{\"theme\": \"dark\", \"customColor\": \"Default\"}'::jsonb",
+          "createdAt": 1738171857871
+        },
+        {
+          "id": "103",
+          "name": "has_seen_tutorial",
+          "type": {
+            "id": "boolean",
+            "name": "boolean"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "default": "false",
+          "createdAt": 1738171857871
+        },
+        {
+          "id": "104",
+          "name": "assist_mode",
+          "type": {
+            "id": "boolean",
+            "name": "boolean"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": true,
+          "default": "false",
+          "createdAt": 1738171857871
+        },
+        {
+          "id": "105",
+          "name": "updated_at",
+          "type": {
+            "id": "timestamp_with_time_zone",
+            "name": "timestamp with time zone"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "default": "now()",
+          "createdAt": 1738171857871
+        }
+      ],
+      "indexes": [
+        {
+          "id": "106",
+          "name": "users_pkey",
+          "unique": true,
+          "fieldIds": [
+            "94"
+          ],
+          "createdAt": 1738171857871
+        }
+      ],
+      "color": "#c05dcf",
+      "isView": false,
+      "isMaterializedView": false,
+      "createdAt": 1738171857871,
+      "comments": "Shadowcrafter users table.",
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "107",
+      "name": "clients",
+      "schema": "public",
+      "x": 488.90872965260115,
+      "y": 559.6194077712559,
+      "fields": [
+        {
+          "id": "108",
+          "name": "id",
+          "type": {
+            "id": "integer",
+            "name": "integer"
+          },
+          "primaryKey": true,
+          "unique": true,
+          "nullable": false,
+          "default": "nextval('clients_id_seq'::regclass)",
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "109",
+          "name": "name",
+          "type": {
+            "id": "character_varying",
+            "name": "character varying"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": false,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "110",
+          "name": "short_name",
+          "type": {
+            "id": "character_varying",
+            "name": "character varying"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": true,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "111",
+          "name": "codename",
+          "type": {
+            "id": "character_varying",
+            "name": "character varying"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": true,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "112",
+          "name": "note",
+          "type": {
+            "id": "text",
+            "name": "text"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": true,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "113",
+          "name": "address",
+          "type": {
+            "id": "character_varying",
+            "name": "character varying"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": true,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "114",
+          "name": "tag",
+          "type": {
+            "id": "array",
+            "name": "array"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": true,
+          "createdAt": 1738171857872
+        },
+        {
+          "id": "115",
+          "name": "contact_info",
+          "type": {
+            "id": "jsonb",
+            "name": "jsonb"
+          },
+          "primaryKey": false,
+          "unique": false,
+          "nullable": true,
+          "createdAt": 1738171857872
+        }
+      ],
+      "indexes": [
+        {
+          "id": "116",
+          "name": "clients_pkey",
+          "unique": true,
+          "fieldIds": [
+            "108"
+          ],
+          "createdAt": 1738171857872
+        }
+      ],
+      "color": "#ffe374",
+      "isView": false,
+      "isMaterializedView": false,
+      "createdAt": 1738171857872,
+      "diagramId": "loixr1u8yvjd"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "117",
+      "name": "chat_messages_chat_complete_fkey",
+      "sourceSchema": "public",
+      "targetSchema": "public",
+      "sourceTableId": "19",
+      "targetTableId": "41",
+      "sourceFieldId": "23",
+      "targetFieldId": "42",
+      "sourceCardinality": "many",
+      "targetCardinality": "one",
+      "createdAt": 1738171857873,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "118",
+      "name": "chat_messages_chat_id_fkey",
+      "sourceSchema": "public",
+      "targetSchema": "public",
+      "sourceTableId": "19",
+      "targetTableId": "68",
+      "sourceFieldId": "21",
+      "targetFieldId": "69",
+      "sourceCardinality": "many",
+      "targetCardinality": "one",
+      "createdAt": 1738171857873,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "119",
+      "name": "chat_messages_user_id_fkey",
+      "sourceSchema": "public",
+      "targetSchema": "public",
+      "sourceTableId": "19",
+      "targetTableId": "93",
+      "sourceFieldId": "22",
+      "targetFieldId": "94",
+      "sourceCardinality": "many",
+      "targetCardinality": "one",
+      "createdAt": 1738171857873,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "120",
+      "name": "chats_client_id_fkey",
+      "sourceSchema": "public",
+      "targetSchema": "public",
+      "sourceTableId": "68",
+      "targetTableId": "107",
+      "sourceFieldId": "71",
+      "targetFieldId": "108",
+      "sourceCardinality": "many",
+      "targetCardinality": "one",
+      "createdAt": 1738171857873,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "121",
+      "name": "chats_created_by_fkey",
+      "sourceSchema": "public",
+      "targetSchema": "public",
+      "sourceTableId": "68",
+      "targetTableId": "93",
+      "sourceFieldId": "74",
+      "targetFieldId": "94",
+      "sourceCardinality": "many",
+      "targetCardinality": "one",
+      "createdAt": 1738171857873,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "122",
+      "name": "chats_engagement_id_fkey",
+      "sourceSchema": "public",
+      "targetSchema": "public",
+      "sourceTableId": "68",
+      "targetTableId": "51",
+      "sourceFieldId": "70",
+      "targetFieldId": "52",
+      "sourceCardinality": "many",
+      "targetCardinality": "one",
+      "createdAt": 1738171857873,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "123",
+      "name": "engagement_documents_client_id_fkey",
+      "sourceSchema": "public",
+      "targetSchema": "public",
+      "sourceTableId": "12",
+      "targetTableId": "107",
+      "sourceFieldId": "13",
+      "targetFieldId": "108",
+      "sourceCardinality": "many",
+      "targetCardinality": "one",
+      "createdAt": 1738171857873,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "124",
+      "name": "engagement_documents_engagement_id_fkey",
+      "sourceSchema": "public",
+      "targetSchema": "public",
+      "sourceTableId": "12",
+      "targetTableId": "51",
+      "sourceFieldId": "14",
+      "targetFieldId": "52",
+      "sourceCardinality": "many",
+      "targetCardinality": "one",
+      "createdAt": 1738171857873,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "125",
+      "name": "engagement_documents_uploaded_by_fkey",
+      "sourceSchema": "public",
+      "targetSchema": "public",
+      "sourceTableId": "12",
+      "targetTableId": "93",
+      "sourceFieldId": "17",
+      "targetFieldId": "94",
+      "sourceCardinality": "many",
+      "targetCardinality": "one",
+      "createdAt": 1738171857873,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "126",
+      "name": "engagement_todos_engagement_id_fkey",
+      "sourceSchema": "public",
+      "targetSchema": "public",
+      "sourceTableId": "1",
+      "targetTableId": "51",
+      "sourceFieldId": "7",
+      "targetFieldId": "52",
+      "sourceCardinality": "many",
+      "targetCardinality": "one",
+      "createdAt": 1738171857873,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "127",
+      "name": "engagements_client_id_fkey",
+      "sourceSchema": "public",
+      "targetSchema": "public",
+      "sourceTableId": "51",
+      "targetTableId": "107",
+      "sourceFieldId": "61",
+      "targetFieldId": "108",
+      "sourceCardinality": "many",
+      "targetCardinality": "one",
+      "createdAt": 1738171857873,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "128",
+      "name": "engagements_type_id_fkey",
+      "sourceSchema": "public",
+      "targetSchema": "public",
+      "sourceTableId": "51",
+      "targetTableId": "78",
+      "sourceFieldId": "62",
+      "targetFieldId": "79",
+      "sourceCardinality": "many",
+      "targetCardinality": "one",
+      "createdAt": 1738171857873,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "129",
+      "name": "evidence_engagement_id_fkey",
+      "sourceSchema": "public",
+      "targetSchema": "public",
+      "sourceTableId": "87",
+      "targetTableId": "51",
+      "sourceFieldId": "90",
+      "targetFieldId": "52",
+      "sourceCardinality": "many",
+      "targetCardinality": "one",
+      "createdAt": 1738171857873,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "130",
+      "name": "fk_timezone",
+      "sourceSchema": "public",
+      "targetSchema": "public",
+      "sourceTableId": "51",
+      "targetTableId": "9",
+      "sourceFieldId": "66",
+      "targetFieldId": "10",
+      "sourceCardinality": "many",
+      "targetCardinality": "one",
+      "createdAt": 1738171857873,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "131",
+      "name": "pinned_engagements_user_id_fkey",
+      "sourceSchema": "public",
+      "targetSchema": "public",
+      "sourceTableId": "82",
+      "targetTableId": "93",
+      "sourceFieldId": "84",
+      "targetFieldId": "94",
+      "sourceCardinality": "many",
+      "targetCardinality": "one",
+      "createdAt": 1738171857873,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "132",
+      "name": "saved_scans_engagement_id_fkey",
+      "sourceSchema": "public",
+      "targetSchema": "public",
+      "sourceTableId": "31",
+      "targetTableId": "51",
+      "sourceFieldId": "33",
+      "targetFieldId": "52",
+      "sourceCardinality": "many",
+      "targetCardinality": "one",
+      "createdAt": 1738171857873,
+      "diagramId": "loixr1u8yvjd"
+    },
+    {
+      "id": "133",
+      "name": "templates_parent_id_fkey",
+      "sourceSchema": "public",
+      "targetSchema": "public",
+      "sourceTableId": "46",
+      "targetTableId": "46",
+      "sourceFieldId": "49",
+      "targetFieldId": "47",
+      "sourceCardinality": "many",
+      "targetCardinality": "one",
+      "createdAt": 1738171857873,
+      "diagramId": "loixr1u8yvjd"
+    }
+  ],
+  "dependencies": []
+}

@@ -5,7 +5,7 @@ server {
     location / {
         root   /usr/share/nginx/html;
         index  index.html index.htm;
-	    try_files  $uri $uri/ /index.html;
+        try_files  $uri $uri/ /index.html;
     }
 
     location /config.js {
@@ -15,6 +15,13 @@ server {
             OPENAI_API_ENDPOINT: \"$OPENAI_API_ENDPOINT\",
             LLM_MODEL_NAME: \"$LLM_MODEL_NAME\"
         };";
+    }
+
+    # ✅ Serve the auto-imported diagram JSON file
+    location /imported-diagram.json {
+        root /;
+        add_header Content-Type application/json;
+        try_files /data/diagram.json =404;
     }
 
     error_page   500 502 503 504  /50x.html;

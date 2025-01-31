@@ -30,13 +30,13 @@ export const ImportDiagramDialog: React.FC<ImportDiagramDialogProps> = ({
     const { addDiagram } = useStorage();
     const navigate = useNavigate();
     const [error, setError] = useState(false);
+    const { closeImportDiagramDialog, closeCreateDiagramDialog } = useDialog();
 
     const onFileChange = useCallback((files: File[]) => {
         if (files.length === 0) {
             setFile(null);
             return;
         }
-
         setFile(files[0]);
     }, []);
 
@@ -45,7 +45,6 @@ export const ImportDiagramDialog: React.FC<ImportDiagramDialogProps> = ({
         setError(false);
         setFile(null);
     }, [dialog.open]);
-    const { closeImportDiagramDialog, closeCreateDiagramDialog } = useDialog();
 
     const handleImport = useCallback(() => {
         if (!file) return;
@@ -64,12 +63,12 @@ export const ImportDiagramDialog: React.FC<ImportDiagramDialogProps> = ({
                 closeCreateDiagramDialog();
 
                 navigate(`/diagrams/${diagram.id}`);
-            } catch (e) {
+            } catch (error) {
+                console.error('❌ Error importing file:', error);
                 setError(true);
-
-                throw e;
             }
         };
+
         reader.readAsText(file);
     }, [
         file,
@@ -77,6 +76,53 @@ export const ImportDiagramDialog: React.FC<ImportDiagramDialogProps> = ({
         navigate,
         closeImportDiagramDialog,
         closeCreateDiagramDialog,
+    ]);
+
+    useEffect(() => {
+        const autoImport = async () => {
+            try {
+                const importPath = '/imported-diagram.json';
+
+                const response = await fetch(importPath, {
+                    headers: { Accept: 'application/json' },
+                });
+
+                if (response.status === 404) {
+                    return;
+                }
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                // Read response as JSON
+                const json = await response.json();
+
+                // Ensure JSON is a string if required by diagramFromJSONInput
+                let diagramData = json;
+                if (typeof json === 'object') {
+                    diagramData = JSON.stringify(json); // Convert back to string if needed
+                }
+
+                const diagram = diagramFromJSONInput(diagramData);
+
+                await addDiagram({ diagram });
+
+                closeImportDiagramDialog();
+                closeCreateDiagramDialog();
+                navigate(`/diagrams/${diagram.id}`);
+            } catch (error) {
+                console.error('❌ Error auto-importing diagram:', error);
+                setError(true);
+            }
+        };
+
+        autoImport();
+    }, [
+        addDiagram,
+        closeImportDiagramDialog,
+        closeCreateDiagramDialog,
+        navigate,
     ]);
 
     return (

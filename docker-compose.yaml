@@ -1,0 +1,10 @@
+services:
+  chartdb:
+    build:
+      context: .  # Uses the Dockerfile in the root directory
+      dockerfile: Dockerfile  # Explicitly specify the Dockerfile
+    container_name: chartdb
+    # volumes:
+    #   - ./diagrams:/data  # Mounts a folder for automatic imports
+    ports:
+      - "3000:80"
